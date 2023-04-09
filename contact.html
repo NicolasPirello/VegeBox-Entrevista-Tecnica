@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="icon" type="image/webp" href="./src/img/favicon.webp">
+
+    <!-- Seo SERP -->
+    <title>Contacto | ✅ VegeBox</title>
+    <meta name="description" content="Pagina de contacto de VegeBox. Tu mejor aliado a la hora de comprar las mejores verduras para tus comidas 😀">
+
+    <!-- Pagina sin valor semantico, por ende no debe ser rastreada por los robots de Google u otras empresas (En excepciones lo ignoran por eso completo las meta.). -->
+    <meta name="robots" content="noindex">
+
+    <!--Fuentes de Google font-family: 'Titillium Web', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Script de FontAwesome - Ultima version -->
+    <script src="https://kit.fontawesome.com/58adbff36b.js" crossorigin="anonymous"></script>
+
+    <!-- Script de FontAwesome 5.15.3 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
+</head>
+
+<body class="contact">
+
+    <header>
+
+        <nav class="my-navbar">
+
+            <div class="my-navbar-content">
+    
+              <div class="my-navbar-logo">
+                <a href="/" class="my-navbar-logo-link">
+                  <img src="./src/img/logov2.webp" alt="Firefox" class="my-navbar-logo-image">
+                </a>
+              </div>
+    
+                <div class="my-navbar-menu">
+    
+                    <input type="checkbox" name="hamburger" id="hamburger" class="my-navbar-hamburger-input" hidden>
+    
+                    <label for="hamburger" class="my-navbar-hamburger-label hamburger">
+    
+                    <div class="my-navbar-hamburger-line-one"></div>
+                    <div class="my-navbar-hamburger-line-two"></div>
+    
+                    </label>
+    
+                    <div class="my-navbar-links-container">
+                        <ul>
+                            <li><a href="/" class="my-navbar-link">Inicio</a></li>
+                            <li><a href="/" class="my-navbar-link">Informacion</a></li>
+                            <li><a href="/" class="my-navbar-link">Servicios</a></li>
+                            <li><a href="./contact.html" class="my-navbar-link">Contacto</a></li>
+                        </ul>
+                    </div>
+    
+                </div>
+    
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="contact-container">
+
+        <section class="contact-form">
+            
+            <form id="miFormulario" method="post">
+
+                <h3>Formulario de Contacto</h3>
+
+                <div id="contact_nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre" class="contact-label-style">
+                    <p id="errores" class="mensajeError">Ingresa un nombre correcto.</p>
+                </div>
+
+                <div id="contact_correoElectronico">
+                    <label for="correoElectronico">Correo electrónico:</label>
+                    <input type="email" id="correoElectronico" name="correoElectronico" required placeholder="Escribe tu correo" class="contact-label-style">
+                    <p id="errores" class="mensajeError">Ingresa un correo electronico valido.</p>
+                </div>
+
+                <div id="contact_asunto">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required placeholder="Escribe un asunto" class="contact-label-style">
+                    <p id="errores" class="mensajeError">Ingresa un asunto valido.</p>
+                </div>
+
+                <div id="contact_mensaje">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje" class="contact-label-style"></textarea>
+                    <p id="errores" class="mensajeError">Ingresa un mensaje valido</p>
+                </div>
+
+                <div id="mensaje-enviado" class="ocultar-mensaje enviado-exitosamente">
+                    <p>El mensaje ha sido enviado exitosamente.</p>
+                </div>
+
+                <div class="form-button">
+                    <button type="submit">Enviar Mensaje</button>
+                </div>
+
+                <div id="bloque-de-errores" class="errores-del-formulario">
+                    <p>Hay errores que no permiten que se envie el Formulario de Contacto.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-xmark fa-beat-fade"></i>El nombre no debe contener numeros ni caracteres especiales</li>
+                        <li><i class="fa-solid fa-xmark fa-beat-fade"></i>Se debe poner un correo electronico valido.</li>
+                        <li><i class="fa-solid fa-xmark fa-beat-fade"></i>El asunto no debe contener numeros ni caracteres especiales</li>
+                    </ul>
+                </div>
+
+            </form>
+
+        </section>
+       
+    </main>
+
+    <footer>
+        <h3><a href="https://nicolaspirello.com" target="_blank">Desarrollado por Nicolas Alejandro Pirello</a></h3>
+        <p>Para Entrevista Laboral</p>
+    </footer>
+
+    <script type="module" src="./src/js/contact.js"></script>
+    <script type="module" src="./src/js/config.js"></script>
+    <script type="module" src="./src/js/validationsContact.js"></script>
+
+</body>
+</html>

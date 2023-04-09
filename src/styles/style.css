@@ -1,0 +1,772 @@
+/* --------------- Globales --------------- */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 160%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul{
+    text-decoration: none;
+}
+
+li{
+    display: inline-block;
+}
+
+a:link,
+a:visited,
+a:hover
+a:active {
+    color: #ffffff;
+    text-decoration: none;
+    transition: none;
+}
+
+
+/* --------------- Scroll --------------- */
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+/* --------------- Variables --------------- */
+
+:root {
+    --tamanoNavBar: 104px;
+    --tamanoFooter: 150px;
+    --colorFooter: rgb(30 41 59);
+    --verdeLogoClaro: #00CC9A;
+    --verdeLogo: #00CC99;
+    --padding-section: 25px;
+    --verde-oscuro: rgb(25, 182, 46);
+    --hover-button: #01ffc0;
+}
+
+/* --------------- Compartidos por toda la web --------------- */
+
+body{
+    position: relative;
+    top: var(--tamanoNavBar);
+}
+
+main{
+    min-height: calc( 100vh - var(--tamanoFooter) - var(--tamanoNavBar));
+}
+
+
+/*  Footer  */
+
+footer {
+    height: var(--tamanoFooter);
+    background-color: var(--colorFooter);
+    color: white;
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h3 {
+    font-size: 17px;
+}
+
+
+/*  Navbar  */
+
+.my-navbar {
+    z-index: 20;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-navbar ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-navbar li{
+    padding: 10px;
+    font-size: 22px;
+    justify-content: center;
+    text-align: center;
+}
+
+.my-navbar-content {
+    padding: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.my-navbar-logo {
+    z-index: 20;
+}
+
+.my-navbar-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.my-navbar-logo-image {
+    width: 14rem;
+    height: 4.5rem;
+}
+
+.my-navbar-logo-text {
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.my-navbar-menu {
+    display: b;
+}
+
+.my-navbar-hamburger-input {
+    position: absolute;
+    visibility: hidden;
+}
+
+.my-navbar-hamburger-label {
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+    display: block;
+    transition: all 0.3s ease;
+    padding: 2rem 1.75rem;
+    border-radius: 50%;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); 
+    background-color: rgb(241 245 249);
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+}
+
+
+.my-navbar-hamburger-line-one{
+    background-color: black;
+    height: 2px;
+    width: 24px;
+}
+
+.my-navbar-hamburger-line-two{
+    background-color: black;
+    margin-top: 8px;
+    height: 2px;
+    width: 24px;
+}
+
+.my-navbar-hamburger-label:hover {
+    background-color: #d9d9d9;
+}
+
+/* Cuando hago click en el boton de menu responsive, me muestra el menu. */
+
+.sacar-responsive {
+    right: 100%;
+}
+
+.my-navbar-hamburger-input:checked ~ .my-navbar-links-container {
+    right: 0%;
+}
+
+
+.my-navbar-hamburger-input:checked ~ .hamburger div:first-child{
+    transition: all 0.3s;
+    rotate: 45deg;
+    transform: translateY(4px) translateX(4px);;
+}
+
+.my-navbar-hamburger-input:checked ~ .hamburger div:last-child{
+    transition: all 0.3s;
+    rotate: -45deg;
+    transform: translateY(-3px) translateX(3px);
+}
+
+.my-navbar-hamburger-input:not(:checked) ~ .hamburger div:first-child,
+.my-navbar-hamburger-input:not(:checked) ~ .hamburger div:last-child {
+    transition: all 0.3s;
+}
+
+/* FIN >>> Cuando hago click en el boton de menu responsive, me muestra el menu. */
+
+.my-navbar-links-container {
+    position: fixed;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.my-navbar-links-container a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    transition: all .3s ease;
+}
+
+.my-navbar-links-container a:nth-child(1):hover {
+    background-color: var(--verdeLogo);
+    color: white;
+}
+
+.my-navbar-links-container a:nth-child(2):hover {
+    background-color: var(--verdeLogo);
+    color: white;
+}
+
+.my-navbar-links-container a:nth-child(3):hover {
+    background-color: var(--verdeLogo);
+    color: white;
+}
+
+/* ---------- Pagina Index ---------- */
+
+.top-container{
+    padding: var(--padding-section);
+    text-align: center;
+}
+
+.index h1 {
+    text-transform: uppercase;
+    margin: 35px 0 12px;
+}
+
+.index .top p{
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.index .top img {
+    max-width: 1000px;
+    display: block;
+    margin: 40px auto;
+}
+
+.index .top-container button {
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    background-color: var(--verdeLogo);
+    text-transform: capitalize;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.index .top-container button:hover{
+    background-color: var(--hover-button);
+    transition: all .3s;
+}
+
+
+.trustUsContainer .vector{
+    width: 100% ;
+    position: relative;
+    object-fit: cover;
+    bottom: -10px;
+}
+
+.trustUsContainer{
+    background-color: #f8f8f9;
+    position: relative;
+}
+
+.trustUsContainer .container{
+    text-align: center;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: var(--padding-section);
+}
+
+.index .trustUs-images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.index .trustUs-images img {
+    width: 90px;
+}
+
+.index .trustUsContainer h3 {
+    margin: 20px 0 0
+}
+
+.index .trustUsContainer p {
+    margin: 6px 0 30px;
+}
+
+
+.index .infoVegaBox .container {
+    padding: var(--padding-section) var(--padding-section) 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.index .infoVegaBox h2 {
+    text-transform: uppercase;
+    margin: 12px 0;
+}
+
+.index .infoVegaBox p {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.index .infoVegaBox img {
+    width: 250px;
+}
+
+.index .infoVegaBox .organic{
+    text-align: center;
+}
+
+.index .infoVegaBox .organic-grid-container {
+    text-align: center;
+    margin: 0px auto 40px;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    gap: 20px;
+}
+
+.index .infoVegaBox .organic {
+    padding: var(--padding-section);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.index .infoVegaBox .organic-grid-container img{
+    border-radius: 25px;
+    width: 100%;
+}
+
+.index .infoVegaBox .organic-grid-container h3{
+    margin: 20px;
+    font-size: 25px;
+}
+
+.index .infoVegaBox .organic-grid-container p{
+    display: inline-block;
+    margin: 10px;
+}
+
+.index .prices img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.index .prices .container-background{
+    background-color: var(--verdeLogo);
+}
+
+.index .prices .container-background h2{
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.index .prices .container-background p{
+    color: white;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.index .prices .container{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 60px var(--padding-section);
+    text-align: center;
+}
+
+.index .prices .above{
+    position: relative;
+    bottom: -10px;
+}
+
+
+.index .prices .grid-prices {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.index .prices .grid-prices div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.3;
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px;
+}
+
+.index .prices .grid-prices div img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.index .prices .grid-prices div h3 {
+    padding: 4px;
+    border-bottom: solid 1px var(--verdeLogo);;
+}
+
+.index .prices .grid-prices div ul {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.index .prices .grid-prices div li {
+    padding: 6px;
+}
+
+.index .prices .grid-prices div button {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--verdeLogo);
+    color: white;
+    font-size: 16px;
+    margin: 10px auto;
+    width: 60%;
+}
+
+.index .prices .grid-prices div button:hover {
+    transition: all 0.3s;
+    background-color: #01ffc0;
+}
+
+.fa-dollar-sign{
+    font-size: 15px;
+    color: white;
+    margin-right: 5px;
+}
+
+.fa-check{
+    font-size: 15px;
+    color: #9ADD3F;
+    margin-right: 5px;
+}
+
+.fa-xmark{
+    font-size: 14px;
+    color: #9ADD3F;
+    margin-right: 5px;
+}
+
+.index .container-galery{
+    margin: auto;
+    padding: 25px;
+}
+
+
+.index .galery-images{
+    margin: 40px auto;
+    display: flex;
+    min-width: 300px;
+    min-height: 400px;
+    max-width: 1200px;
+    max-height: 1000px;
+}
+
+.index .galery-images img{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: .5s ease ;
+}
+
+.index .galery-images img:hover{
+    cursor: crosshair;
+    width: 200px;
+    opacity: 1;
+    filter: contrast(120%);
+
+}
+
+.index .container-galery h3,
+.index .container-galery p{
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.index .container-galery h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.index .container-galery div:nth-child(1){
+    margin: 50px 0;
+}
+
+/* ---------- Pagina Contacto ---------- */
+
+#miFormulario{
+    box-shadow: inset 0 1px 0 0 #ffffff1a;
+    padding: 30px;
+    border: solid 1px gainsboro;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+#miFormulario h3{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: solid 2px var(--verdeLogoClaro);
+}
+
+.contact-container{
+    min-height: calc(100vh - var(--tamanoNavBar) - var(--tamanoFooter));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact-form{
+    width: 100%;
+    max-width: 800px;
+    padding: var(--padding-section);
+
+}
+
+.contact-container label {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact-label-style {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: solid 1px gainsboro;
+}
+
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-bottom: solid 1px var(--verdeLogoClaro);
+    opacity: 0.7;
+    transition: 0.1s ease;
+} 
+
+#miFormulario div{
+    margin: 18px 0;
+}
+
+.contact-container button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--verdeLogoClaro);
+    font-weight: 700;
+    color: white;
+    margin: 10px 0 0;
+}
+
+.contact-container .form-button {
+    text-align: end;
+}
+
+.contact-container button:hover {
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+/* ---------- Pagina Contacto | Validaciones y Errores ---------- */
+
+.isInvalid {
+    border-bottom: solid 2px red;
+}
+
+.isValid{
+    border-bottom: solid 2px green;
+}
+
+.mensajeError {
+    display: none;
+    color: red;
+    font-weight: 700;
+    margin-left: 3px;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.mensajeErrorActive {
+    display: block;
+}
+
+.contact-container .errores-del-formulario p{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.contact-container .errores-del-formulario li{
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+    margin: 7px 0;
+}
+
+.contact-container .errores-del-formulario .fa-xmark{
+    margin-right: 8px;
+    color: red;
+}
+
+.contact-container .errores-del-formulario{
+    display: none;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.082);
+    padding: 20px 25px;
+    border-radius: 15px;
+}
+
+.contact-container .formulario-con-errores{
+    display: block;
+}
+
+.contact-container .enviado-exitosamente {
+    background-color: rgba(0, 204, 153, .5);
+    border-radius: 10px;
+    transition: 5s ease;
+}
+
+.contact-container .enviado-exitosamente p{
+    padding: 15px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.ocultar-mensaje{
+    display: none;
+}
+
+/** ---------- MEDIA QUERY ---------- */
+
+@media (min-width: 768px) {
+
+    /* --------------- Globales --------------- */
+
+    section[id] {
+        scroll-margin-top: 160px;
+    }
+
+    main {
+        margin: 0 auto;
+    }
+
+    /* --------------- Navbar --------------- */
+
+    .my-navbar ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .my-navbar li{
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .my-navbar-content {
+        position: static;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .my-navbar-menu {
+        display: flex;
+    }
+
+    .my-navbar-hamburger-label {
+        display: none;
+    }
+
+    .my-navbar-links-container {
+        position: static;
+        width: auto;
+        height: auto;
+        box-shadow: none;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .my-navbar-links-container a{
+        margin-left: 8px;
+    }
+
+    .my-navbar-link {
+        margin-left: 2rem;
+        margin-bottom: 0;
+    }
+
+    /* ---------- Pagina Index ---------- */
+
+    .index .infoVegaBox .organic-grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .index .infoVegaBox .organic-grid-container .one{
+        order: 1;
+    }
+
+}
+  
