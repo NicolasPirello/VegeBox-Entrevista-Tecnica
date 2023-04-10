@@ -701,6 +701,15 @@ footer h3 {
 
 @media (min-width: 768px) {
 
+
+    label{
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button{
+        -webkit-tap-highlight-color: transparent;
+    }
+
     /* --------------- Globales --------------- */
 
     section[id] {
