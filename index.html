@@ -11,17 +11,6 @@
     <title>VegeBox | Servicio de envío de vegetales frescos y saludables 🥒🥬🥦</title>
     <meta name="description" content="En VegeBox 🌱 te enviamos los mejores vegetales frescos para que prepares tus comidas favoritas en casa 🏠. Personalizá tu caja 📦 con tus verduras preferidas y recibila en la puerta de tu casa 🚪. ¡Conocé nuestros productos ahora!">
 
-    <!--Fuentes de Google font-family: 'Titillium Web', sans-serif;-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
-
-    <!-- Script de FontAwesome - Ultima version -->
-    <script src="https://kit.fontawesome.com/58adbff36b.js" crossorigin="anonymous"></script>
-
-    <!-- Script de FontAwesome 5.15.3 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-
 </head>
 
 <body class="index">
@@ -74,7 +63,7 @@
                 <h1 class="indexH1">Tus vegetales fresquitos llegan a tu casa, ¡sin problemas!</h1>
                 <p>Queremos hacerte la vida más fácil. Contanos tus recetas, y nosotros nos ocupamos de comprar tus vegetales cada semana. Así, no tendrás que tirar nada por calcular mal y siempre disfrutarás de tus vegetales fresquitos.</p>
                 <button>Descubrí los beneficios</button>
-                <img src="./src/img/Frutas x2.webp" alt="" width="100%">
+                <img src="./src/img/Frutas x2.webp" alt="" width="100%" height=auto>
             </div>
 
         </section>
@@ -214,7 +203,21 @@
         <p>Para Entrevista Laboral</p>
     </footer>
 
-    <script type="module" src="./src/js/navbar.js"></script>
+    <!-- Los agrego a lo ultimo y diferidos para evitar que se carguen como archivos criticos y relentice la carga de la web -->
+
+    <!--Scrips de la misma WEB -->
+    <script type="module" src="./src/js/navbar.js" defer></script>
+
+    <!--Fuentes de Google font-family: 'Titillium Web', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" defer>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin defer>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet" defer>
+
+    <!-- Script de FontAwesome - Ultima version -->
+    <script src="https://kit.fontawesome.com/58adbff36b.js" crossorigin="anonymous" defer></script>
+
+    <!-- Script de FontAwesome 5.15.3 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" defer/>
     
 </body>
 </html>
