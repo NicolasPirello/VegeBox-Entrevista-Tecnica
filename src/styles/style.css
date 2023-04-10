@@ -1,5 +1,11 @@
 /* --------------- Globales --------------- */
 
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../fonts/titillium/TitilliumWeb-Regular.ttf') format('truetype');
+    font-display: block; /* Carga en Diferido */
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -697,18 +703,15 @@ footer h3 {
     display: none;
 }
 
+label, button {
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+}
+
 /** ---------- MEDIA QUERY ---------- */
 
 @media (min-width: 768px) {
-
-
-    label{
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    button{
-        -webkit-tap-highlight-color: transparent;
-    }
 
     /* --------------- Globales --------------- */
 
@@ -776,6 +779,13 @@ footer h3 {
     .index .infoVegaBox .organic-grid-container .one{
         order: 1;
     }
+
+    label, button {
+        -webkit-tap-highlight-color: transparent;
+        -moz-tap-highlight-color: transparent;
+        -ms-tap-highlight-color: transparent;
+    }
+
 
 }
   
